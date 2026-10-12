@@ -1,65 +1,16 @@
-# Plan de Desarrollo Scrum y Requisitos del Sistema
+# Documento de Requisitos: Directorio de Docentes e Ideas de Investigación
 
-**Proyecto:** Directorio de docentes e ideas de investigación[cite: 1]  
-**Institución:** Universidad Mariana - Programa de Ingeniería de Sistemas[cite: 1]  
-**Período:** 30 de septiembre - 10 de noviembre[cite: 1]
+## Actores Principales del Sistema
+- **Estudiante:** Usuario final que busca docentes asesores, consulta perfiles, proyectos dirigidos e ideas de investigación sin necesidad de iniciar sesión[cite: 1, 2].
+- **Profesor:** Usuario autenticado con correo institucional (@umariana.edu.co) que gestiona su perfil personal e ideas de investigación[cite: 1, 2].
+- **Super Admin:** Administrador del sistema que gestiona docentes, catálogos (áreas/ejes), asignación de proyectos y permisos[cite: 1, 2].
 
----
+## Matriz de Problemas, Necesidades y Requisitos Funcionales
 
-## 📋 Requisitos Funcionales por Actor
-
-### 1. Estudiante
-- **RF-E01:** Mostrar la página principal con el directorio sin iniciar sesión[cite: 2].
-- **RF-E02:** Permitir filtrar docentes por área y eje temático[cite: 2].
-- **RF-E03:** Mostrar perfil de cada profesor con foto, nombre, título, correo, áreas y ejes[cite: 2].
-- **RF-E04:** Mostrar proyectos dirigidos (activos y finalizados) con fechas y etiquetas[cite: 2].
-- **RF-E05:** Mostrar ideas de investigación e identificar las no disponibles[cite: 2].
-- **RF-E06:** Ofrecer pestaña "Base de ideas"[cite: 2].
-- **RF-E07:** Indicar estado del profesor y ocultar inhabilitados[cite: 2].
-- **RF-E08:** Botón "Enviar correo" que dirija a Gmail con el correo del docente[cite: 2].
-
-### 2. Profesor
-- **RF-P01:** Inicio de sesión mediante Google con correo institucional (@umariana.edu.co)[cite: 2].
-- **RF-P02:** Visualizar su perfil tal como lo ve el estudiante[cite: 2].
-- **RF-P03:** Permitir editar únicamente sus propios datos[cite: 2].
-- **RF-P04:** Visualizar áreas y ejes asignados por el Super Admin[cite: 2].
-- **RF-P05:** Agregar ideas de investigación[cite: 2].
-- **RF-P06:** Editar ideas sin opción de eliminarlas[cite: 2].
-- **RF-P07:** Cambiar la disponibilidad de sus ideas[cite: 2].
-- **RF-P08:** Impedir la modificación de datos/ideas de otros profesores[cite: 2].
-- **RF-P11:** Cerrar sesión[cite: 2].
-
-### 3. Super Admin
-- **RF-S01:** Inicio de sesión administrativo con correo y contraseña propios[cite: 2].
-- **RF-S02:** Acceso al espacio docente mediante Google institucional[cite: 2].
-- **RF-S04 / RF-S05:** Agregar y editar datos de cualquier profesor[cite: 3].
-- **RF-S06 / RF-S07:** Gestionar disponibilidad e inhabilitar/reactivar profesores[cite: 3].
-- **RF-S08:** Crear, editar y desactivar catálogo de áreas y ejes temáticos[cite: 3].
-- **RF-S09 / RF-S10:** Crear, asignar proyectos y registrar fechas (creación, inicio, fin)[cite: 3].
-- **RF-S12:** Cambiar automáticamente un proyecto a "Finalizado" al registrar fecha de fin[cite: 3].
-
----
-
-## 🎯 Product Backlog Resumido
-
-| Código | Historia Resumida | Sprint | Prioridad | Story Points |
-| :--- | :--- | :--- | :--- | :--- |
-| **HU-E01** | Consultar directorio | Sprint 1 | Must Have | 3 SP[cite: 3] |
-| **HU-E02** | Filtrar por área y eje | Sprint 1 | Must Have | 5 SP[cite: 3] |
-| **HU-E03** | Consultar perfil docente | Sprint 1 | Must Have | 3 SP[cite: 3] |
-| **HU-E04** | Consultar proyectos dirigidos | Sprint 1 | Should Have | 5 SP[cite: 3] |
-| **HU-E05** | Consultar ideas | Sprint 1 | Must Have | 3 SP[cite: 3] |
-| **HU-E06** | Consultar disponibilidad | Sprint 1 | Must Have | 3 SP[cite: 3] |
-| **HU-E07** | Contactar por correo | Sprint 1 | Should Have | 2 SP[cite: 3] |
-| **HU-P01** | Inicio de sesión Google | Sprint 2 | Must Have | 8 SP[cite: 3] |
-| **HU-P03** | Editar datos personales | Sprint 2 | Must Have | 5 SP[cite: 3] |
-| **HU-P05** | Agregar ideas | Sprint 2 | Must Have | 5 SP[cite: 3] |
-| **HU-P06** | Editar ideas | Sprint 2 | Must Have | 3 SP[cite: 3] |
-| **HU-P07** | Cambiar disponibilidad de ideas | Sprint 2 | Must Have | 3 SP[cite: 3] |
-| **HU-P08** | Proteger datos de otros profesores | Sprint 2 | Must Have | 5 SP[cite: 3] |
-| **HU-S01** | Inicio de sesión Super Admin | Sprint 3 | Must Have | 5 SP[cite: 3] |
-| **HU-S02** | Agregar profesores | Sprint 3 | Must Have | 5 SP[cite: 3] |
-| **HU-S05** | Inhabilitar/reactivar profesores | Sprint 3 | Must Have | 5 SP[cite: 3] |
-| **HU-S06** | Administrar áreas y ejes | Sprint 3 | Must Have | 5 SP[cite: 3] |
-| **HU-S07** | Crear y asignar proyectos | Sprint 4 | Must Have | 8 SP[cite: 3] |
-| **HU-S09** | Finalización automática de proyectos | Sprint 4 | Must Have | 5 SP[cite: 3] |
+| Problema Identificado | Necesidad de Software | Requisito Funcional |
+| :--- | :--- | :--- |
+| **1. Dificultad para encontrar Asesor e Ideas de Investigación:** Los estudiantes pierden tiempo buscando docentes según sus temas de interés y no conocen la disponibilidad real de ideas de proyecto de grado. | Portal de libre acceso para consulta centralizada, filtrado por áreas/ejes temáticos y visualización del estado de docentes e ideas. | **RF-E01:** El sistema debe mostrar la página principal con el directorio completo sin requerir inicio de sesión[cite: 2].<br><br>**RF-E02:** El sistema debe permitir filtrar docentes por área y eje temático[cite: 2].<br><br>**RF-E03 / RF-E05:** El sistema debe mostrar el perfil público del docente y sus ideas de investigación identificando cuáles no están disponibles[cite: 2]. |
+| **2. Falta de Visibilidad de Experiencia y Contacto Directo:** Dificultad de los estudiantes para conocer los proyectos previos dirigidos por un profesor y ponerse en contacto de forma ágil. | Integración del historial de proyectos dirigidos y canal ágil para contacto vía correo institucional. | **RF-E04:** El sistema debe mostrar los proyectos dirigidos por el docente (activos y finalizados) con fechas, tipo y etiquetas[cite: 2].<br><br>**RF-E08:** El sistema debe proveer un botón "Enviar correo" que abra una pestaña de Gmail precompletada con el destinatario[cite: 2]. |
+| **3. Inseguridad y Falta de Autonomía en la Gestión Docente:** Necesidad de que los profesores gestionen sus datos e ideas de manera segura sin alterar información de otros docentes. | Autenticación institucional segura con Google OAuth 2.0 y control de acceso estricto por usuario en el servidor. | **RF-P01:** El sistema debe permitir el inicio de sesión mediante Google exclusivo para cuentas `@umariana.edu.co` registradas[cite: 2].<br><br>**RF-P03 / RF-P08:** El sistema debe permitir al profesor editar únicamente sus datos propios e impedir la modificación de información de otros docentes[cite: 2].<br><br>**RF-P05 / RF-P06:** El sistema debe permitir agregar y editar ideas de investigación sin opción de eliminación física[cite: 2]. |
+| **4. Descentralización y Descontrol Operativo Institucional:** Falta de administración central para dar de alta/baja docentes, gestionar categorías temáticas y controlar cupos. | Módulo administrativo centralizado para gestión de usuarios, catálogos y estados de disponibilidad. | **RF-S01 / RF-S04:** El sistema debe permitir al Super Admin iniciar sesión con credenciales propias y registrar nuevos docentes[cite: 2, 3].<br><br>**RF-S06 / RF-S07:** El sistema debe permitir al Super Admin inhabilitar o reactivar docentes y gestionar su disponibilidad[cite: 3].<br><br>**RF-S08:** El sistema debe permitir administrar el catálogo de áreas y ejes temáticos[cite: 3]. |
+| **5. Registro Manual y Errores en la Traza de Proyectos:** Carga operativa en el seguimiento manual de las fechas de inicio, finalización y estado de los proyectos de grado. | Módulo para la creación de proyectos y automatización del ciclo de vida del proyecto según sus fechas. | **RF-S09 / RF-S10:** El sistema debe permitir crear y asignar proyectos a docentes con sus respectivas áreas, ejes y fechas (creación, inicio y fin)[cite: 3].<br><br>**RF-S12:** El sistema debe actualizar automáticamente el estado del proyecto a "Finalizado" al registrarse la fecha de fin[cite: 3]. |
