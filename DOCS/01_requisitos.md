@@ -1,42 +1,70 @@
-# Documento de Requisitos: Directorio de Docentes e Ideas de Investigación
+## 📅 Planificación Completa de Sprints (Scrum)
 
-## Actores Principales del Sistema
-- **Estudiante:** Usuario final que busca docentes asesores, consulta perfiles, proyectos dirigidos e ideas de investigación sin necesidad de iniciar sesión.
-- **Profesor:** Usuario autenticado con correo institucional (@umariana.edu.co) que gestiona su perfil personal e ideas de investigación.
-- **Super Admin:** Administrador del sistema que gestiona docentes, catálogos (áreas/ejes), asignación de proyectos y permisos.
-
-## Matriz de Problemas, Necesidades y Requisitos Funcionales
-
-| Problema Identificado | Necesidad de Software | Requisito Funcional |
-| :--- | :--- | :--- |
-| **1. Dificultad para encontrar Asesor e Ideas de Investigación:** Los estudiantes pierden tiempo buscando docentes según sus temas de interés y no conocen la disponibilidad real de ideas de proyecto de grado. | Portal de libre acceso para consulta centralizada, filtrado por áreas/ejes temáticos y visualización del estado de docentes e ideas. | **RF-E01:** El sistema debe mostrar la página principal con el directorio completo sin requerir inicio de sesión.<br><br>**RF-E02:** El sistema debe permitir filtrar docentes por área y eje temático.<br><br>**RF-E03 / RF-E05:** El sistema debe mostrar el perfil público del docente y sus ideas de investigación identificando cuáles no están disponibles. |
-| **2. Falta de Visibilidad de Experiencia y Contacto Directo:** Dificultad de los estudiantes para conocer los proyectos previos dirigidos por un profesor y ponerse en contacto de forma ágil. | Integración del historial de proyectos dirigidos y canal ágil para contacto vía correo institucional. | **RF-E04:** El sistema debe mostrar los proyectos dirigidos por el docente (activos y finalizados) con fechas, tipo y etiquetas.<br><br>**RF-E08:** El sistema debe proveer un botón "Enviar correo" que abra una pestaña de Gmail precompletada con el destinatario. |
-| **3. Inseguridad y Falta de Autonomía en la Gestión Docente:** Necesidad de que los profesores gestionen sus datos e ideas de manera segura sin alterar información de otros docentes. | Autenticación institucional segura con Google OAuth 2.0 y control de acceso estricto por usuario en el servidor. | **RF-P01:** El sistema debe permitir el inicio de sesión mediante Google exclusivo para cuentas `@umariana.edu.co` registradas.<br><br>**RF-P03 / RF-P08:** El sistema debe permitir al profesor editar únicamente sus datos propios e impedir la modificación de información de otros docentes.<br><br>**RF-P05 / RF-P06:** El sistema debe permitir agregar y editar ideas de investigación sin opción de eliminación física. |
-| **4. Descentralización y Descontrol Operativo Institucional:** Falta de administración central para dar de alta/baja docentes, gestionar categorías temáticas y controlar cupos. | Módulo administrativo centralizado para gestión de usuarios, catálogos y estados de disponibilidad. | **RF-S01 / RF-S04:** El sistema debe permitir al Super Admin iniciar sesión con credenciales propias y registrar nuevos docentes.<br><br>**RF-S06 / RF-S07:** El sistema debe permitir al Super Admin inhabilitar o reactivar docentes y gestionar su disponibilidad.<br><br>**RF-S08:** El sistema debe permitir administrar el catálogo de áreas y ejes temáticos. |
-| **5. Registro Manual y Errores en la Traza de Proyectos:** Carga operativa en el seguimiento manual de las fechas de inicio, finalización y estado de los proyectos de grado. | Módulo para la creación de proyectos y automatización del ciclo de vida del proyecto según sus fechas. | **RF-S09 / RF-S10:** El sistema debe permitir crear y asignar proyectos a docentes con sus respectivas áreas, ejes y fechas (creación, inicio y fin).<br><br>**RF-S12:** El sistema debe actualizar automáticamente el estado del proyecto a "Finalizado" al registrarse la fecha de fin. |
+El proyecto está estructurado en 4 Sprints dentro del período del 30 de septiembre al 10 de noviembre:
 
 ---
 
-## 🎯 Product Backlog Resumido
+### 🔹 Sprint 1: Directorio y Funcionalidades del Estudiante
+**Duración:** 2 semanas (30 de septiembre - 13 de octubre)  
+**Objetivo:** Entregar un directorio funcional y de libre acceso para estudiantes.  
+**Carga Total:** 24 Story Points (SP)
 
-| Código | Historia Resumida | Sprint | Prioridad | Story Points |
-| :--- | :--- | :--- | :--- | :--- |
-| **HU-E01** | Consultar directorio de docentes | Sprint 1 | Must Have | 3 SP |
-| **HU-E02** | Filtrar docentes por área y eje | Sprint 1 | Must Have | 5 SP |
-| **HU-E03** | Consultar perfil de docente | Sprint 1 | Must Have | 3 SP |
-| **HU-E04** | Consultar proyectos dirigidos | Sprint 1 | Should Have | 5 SP |
-| **HU-E05** | Consultar ideas de investigación | Sprint 1 | Must Have | 3 SP |
-| **HU-E06** | Consultar disponibilidad del docente | Sprint 1 | Must Have | 3 SP |
-| **HU-E07** | Contactar al docente por correo | Sprint 1 | Should Have | 2 SP |
-| **HU-P01** | Inicio de sesión institucional (Google) | Sprint 2 | Must Have | 8 SP |
-| **HU-P03** | Editar datos personales del profesor | Sprint 2 | Must Have | 5 SP |
-| **HU-P05** | Agregar ideas de investigación | Sprint 2 | Must Have | 5 SP |
-| **HU-P06** | Editar ideas de investigación | Sprint 2 | Must Have | 3 SP |
-| **HU-P07** | Cambiar disponibilidad de ideas | Sprint 2 | Must Have | 3 SP |
-| **HU-P08** | Proteger datos de otros profesores | Sprint 2 | Must Have | 5 SP |
-| **HU-S01** | Inicio de sesión Super Admin | Sprint 3 | Must Have | 5 SP |
-| **HU-S02** | Agregar profesores al sistema | Sprint 3 | Must Have | 5 SP |
-| **HU-S05** | Inhabilitar o reactivar profesores | Sprint 3 | Must Have | 5 SP |
-| **HU-S06** | Administrar catálogo de áreas y ejes | Sprint 3 | Must Have | 5 SP |
-| **HU-S07** | Crear y asignar proyectos | Sprint 4 | Must Have | 8 SP |
-| **HU-S09** | Finalización automática de proyectos | Sprint 4 | Must Have | 5 SP |
+| Código | Historia de Usuario | Prioridad | SP |
+| :--- | :--- | :--- | :--- |
+| **HU-E01** | Consultar directorio de docentes en la página principal | Must Have | 3 SP |
+| **HU-E02** | Filtrar docentes por área y eje temático | Must Have | 5 SP |
+| **HU-E03** | Consultar perfil del docente (foto, título, correo, áreas) | Must Have | 3 SP |
+| **HU-E04** | Consultar proyectos dirigidos (activos y finalizados) | Should Have | 5 SP |
+| **HU-E05** | Consultar ideas de investigación del docente | Must Have | 3 SP |
+| **HU-E06** | Consultar disponibilidad y cupo del docente | Must Have | 3 SP |
+| **HU-E07** | Contactar al docente vía botón de correo (Gmail) | Should Have | 2 SP |
+
+---
+
+### 🔹 Sprint 2: Gestión del Profesor
+**Duración:** 2 semanas (14 de octubre - 27 de octubre)  
+**Objetivo:** Permitir al profesor autenticarse y gestionar sus propios datos e ideas.  
+**Carga Total:** 35 Story Points (SP)
+
+| Código | Historia de Usuario | Prioridad | SP |
+| :--- | :--- | :--- | :--- |
+| **HU-P01** | Iniciar sesión mediante Google con correo institucional (@umariana.edu.co) | Must Have | 8 SP |
+| **HU-P02** | Consultar perfil propio en vista pública | Should Have | 2 SP |
+| **HU-P03** | Editar foto, datos personales y correo | Must Have | 5 SP |
+| **HU-P04** | Consultar áreas y ejes asignados por administración | Should Have | 2 SP |
+| **HU-P05** | Agregar nuevas ideas de investigación | Must Have | 5 SP |
+| **HU-P06** | Editar ideas de investigación existentes (sin opción de eliminar) | Must Have | 3 SP |
+| **HU-P07** | Cambiar estado de disponibilidad de sus ideas | Must Have | 3 SP |
+| **HU-P08** | Protección de datos (impedir modificar información de otros profesores) | Must Have | 5 SP |
+| **HU-P09** | Cerrar sesión de usuario | Should Have | 2 SP |
+
+---
+
+### 🔹 Sprint 3: Panel de Administración
+**Duración:** 1 semana (28 de octubre - 3 de noviembre)  
+**Objetivo:** Implementar el panel administrativo y la gestión del catálogo.  
+**Carga Total:** 31 Story Points (SP)
+
+| Código | Historia de Usuario | Prioridad | SP |
+| :--- | :--- | :--- | :--- |
+| **HU-S01** | Iniciar sesión como Super Admin (correo y contraseña propios) | Must Have | 5 SP |
+| **HU-S02** | Agregar y autorizar nuevos profesores en el sistema | Must Have | 5 SP |
+| **HU-S03** | Editar datos de cualquier profesor | Must Have | 5 SP |
+| **HU-S04** | Gestionar la disponibilidad del profesor para recibir grupos | Must Have | 3 SP |
+| **HU-S05** | Inhabilitar o reactivar profesores conservando historial | Must Have | 5 SP |
+| **HU-S06** | Administrar catálogo de áreas y ejes temáticos (crear, editar, desactivar) | Must Have | 5 SP |
+| **HU-S11** | Acceso al espacio docente independiente para el profesor Erik | Should Have | 3 SP |
+
+---
+
+### 🔹 Sprint 4: Proyectos, Integración y Entrega Final
+**Duración:** 1 semana (4 de noviembre - 10 de noviembre)  
+**Objetivo:** Completar la asignación de proyectos, integrar módulos, realizar pruebas y entregar el sistema.  
+**Carga Total:** 21 Story Points (SP)
+
+| Código | Historia de Usuario | Prioridad | SP |
+| :--- | :--- | :--- | :--- |
+| **HU-S07** | Crear proyectos y asignarlos a docentes con sus áreas/ejes | Must Have | 8 SP |
+| **HU-S08** | Registrar fechas del proyecto (creación, inicio y fin) | Must Have | 3 SP |
+| **HU-S09** | Transición automática del estado del proyecto a "Finalizado" al ingresar fecha fin | Must Have | 5 SP |
+| **HU-S10** | Editar datos, reasignar y actualizar fechas de proyectos existentes | Must Have | 5 SP |
